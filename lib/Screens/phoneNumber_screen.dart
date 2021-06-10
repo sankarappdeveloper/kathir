@@ -126,11 +126,12 @@ class PhoneNumer extends StatelessWidget {
                                 print('Everything looks good!');
                                 print(_phonenuber);
                                 Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            PinCodeVerificationScreen(
-                                                _phonenuber)));
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        PinCodeVerificationScreen(_phonenuber),
+                                  ),
+                                );
                               }
                             },
                           ),

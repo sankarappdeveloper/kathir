@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/Widgets/input_decoration.dart';
+
+import 'home_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   String name, email, phone;
@@ -171,6 +174,12 @@ class RegisterScreen extends StatelessWidget {
                                     } else {
                                       print("UnSuccessfull");
                                     }
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => HomeScreen(),
+                                      ),
+                                    );
                                   },
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(50.0),
@@ -200,30 +209,5 @@ Text buildHeader(String name) {
   return Text(
     name,
     style: TextStyle(fontSize: 18, color: Colors.indigo),
-  );
-}
-
-InputDecoration buildInputDecoration(IconData icons, String hinttext) {
-  return InputDecoration(
-    hintText: hinttext,
-    prefixIcon: Icon(icons),
-    focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(25.0),
-      borderSide: BorderSide(color: Colors.green, width: 1.5),
-    ),
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(25.0),
-      borderSide: BorderSide(
-        color: Colors.blue,
-        width: 1.5,
-      ),
-    ),
-    enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(25.0),
-      borderSide: BorderSide(
-        color: Colors.blue,
-        width: 1.5,
-      ),
-    ),
   );
 }
