@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.project_1">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="project_1"
         android:icon="@mipmap/ic_launcher">
@@ -27,6 +29,8 @@
               android:name="io.flutter.embedding.android.SplashScreenDrawable"
               android:resource="@drawable/launch_background"
               />
+        <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> -->
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -37,5 +41,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+    <meta-data android:name="com.google.android.geo.API_KEY"
+          android:value="AIzaSyC0qdqtU_uyaB57qP7mFK3c41WsXOyBKsw"/>
     </application>
 </manifest>

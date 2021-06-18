@@ -12,14 +12,18 @@ class NewsScreen extends StatelessWidget {
       length: 5,
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(120.0),
+          preferredSize: Size.fromHeight(100.0),
           child: AppBar(
+            elevation: 0,
+            foregroundColor: Colors.red,
             leading: IconButton(
               icon: Icon(
                 Icons.arrow_back,
                 color: Colors.blueGrey,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
             title: Text(
               "Today's NEWS",
@@ -51,18 +55,31 @@ class NewsScreen extends StatelessWidget {
             ),
           ),
         ),
-        body: Container(
-          child: ListView(
-            children: News_Data.map((e) => NewsCatagory(e.title, e.imageUrl))
-                .toList(),
-            // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            //   // childAspectRatio: 3 / 2,
-            //   mainAxisExtent: 200,
-            //   mainAxisSpacing: 20,
-            //   // maxCrossAxisExtent: 10,
-            //   // crossAxisSpacing: 20,
+        body: Center(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  // topLeft: Radius.circular(40),
+                  // topRight: Radius.circular(40),
+                  ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListView(
+                children:
+                    News_Data.map((e) => NewsCatagory(e.title, e.imageUrl))
+                        .toList(),
+                // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                //   // childAspectRatio: 3 / 2,
+                //   mainAxisExtent: 200,
+                //   mainAxisSpacing: 20,
+                //   // maxCrossAxisExtent: 10,
+                //   // crossAxisSpacing: 20,
 
-            // ),
+                // ),
+              ),
+            ),
           ),
         ),
       ),

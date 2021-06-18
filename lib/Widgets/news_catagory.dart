@@ -9,17 +9,22 @@ class NewsCatagory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0,
+      color: Colors.blue[50],
+      elevation: 2,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
             Container(
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  // topRight: Radius.circular(40),
+                ),
                 image: DecorationImage(
                     image: NetworkImage(imageUrl), fit: BoxFit.cover),
                 // borderRadius: BorderRadius.circular(20.0),
-                borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                // borderRadius: BorderRadius.all(Radius.circular(20.0)),
               ),
               // Image.network(
 

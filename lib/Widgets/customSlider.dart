@@ -19,21 +19,29 @@ class CustomIndicatorState extends State<CustomIndicator> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-        CarouselSlider.builder(
-          itemCount: listPaths.length,
-          options: CarouselOptions(
-              autoPlay: true,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  currentPos = index;
-                });
-              }),
-          itemBuilder: (context, index, int) {
-            return MyImageView(listPaths[index]);
-          },
+    // return Scaffold(
+    //  Center(
+    //     child:
+    return Container(
+      // height: 500,
+      // child: SingleChildScrollView(
+      child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+        Container(
+          height: 190,
+          width: double.infinity,
+          child: CarouselSlider.builder(
+            itemCount: listPaths.length,
+            options: CarouselOptions(
+                autoPlay: true,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    currentPos = index;
+                  });
+                }),
+            itemBuilder: (context, index, int) {
+              return MyImageView(listPaths[index]);
+            },
+          ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -52,8 +60,9 @@ class CustomIndicatorState extends State<CustomIndicator> {
             );
           }).toList(),
         ),
-      ])),
+      ]),
     );
+    // );
   }
 }
 
@@ -71,6 +80,7 @@ class MyImageView extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: Container(
+        // height: 500,
         // width: double.infinity,
         decoration: BoxDecoration(
           image:
