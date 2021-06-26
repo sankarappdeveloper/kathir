@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final net = Provider.of<Connection>(context);
+    // final net = Provider.of<Connection>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -21,11 +21,11 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          AnimatedSwitcher(
-              duration: const Duration(milliseconds: 500),
-              child: net.neTisOn == true
-                  ? InternetAvailable()
-                  : InternetNotAvailable()),
+          // AnimatedSwitcher(
+          //     duration: const Duration(milliseconds: 500),
+          //     child: net.neTisOn == true
+          //         ? InternetAvailable()
+          //         : InternetNotAvailable()),
           Expanded(
             child: Center(
               child: RaisedButton(

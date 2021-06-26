@@ -27,14 +27,20 @@ class NewsScreen extends StatelessWidget {
             ),
             title: Text(
               "Today's NEWS",
-              style: TextStyle(color: Colors.blue[900]),
+              style: TextStyle(
+                // color: Colors.blue[900],
+                color: Colors.black,
+              ),
             ),
             backgroundColor: Colors.white,
             bottom: TabBar(
               isScrollable: true,
+              unselectedLabelColor: Colors.black,
               indicatorSize: TabBarIndicatorSize.tab,
-              indicator: CircleTabIndicator(color: Colors.green, radius: 2),
-              labelColor: Colors.black,
+              indicator:
+                  CircleTabIndicator(color: Colors.pinkAccent, radius: 2),
+              labelColor: Colors.pinkAccent,
+              indicatorColor: Colors.pinkAccent,
               tabs: [
                 Tab(
                   text: "All",

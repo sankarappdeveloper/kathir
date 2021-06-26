@@ -1,15 +1,16 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:project_1/Models/card_model.dart';
 import 'package:project_1/SHOP/Screens/screens.dart';
+import 'package:project_1/Screens/event_screen.dart';
+import 'package:project_1/Screens/offers_screen.dart';
 import 'package:project_1/Widgets/internet_uti.dart';
 import 'package:project_1/Screens/profile_screen.dart';
 import 'package:project_1/Screens/shop_screen.dart';
 import 'package:project_1/Widgets/card_grid.dart';
 import 'package:project_1/Widgets/customSlider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:connectivity/connectivity.dart';
+// import 'package:connectivity/connectivity.dart';
 import '../shop_mainScreen.dart';
 import 'news_screen.dart';
 
@@ -93,12 +94,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   StreamSubscription subscription;
-  void initState() {
-    super.initState();
+  // void initState() {
+  //   super.initState();
 
-    subscription =
-        Connectivity().onConnectivityChanged.listen(showConnectivitySnackBar);
-  }
+  //   subscription =
+  //       Connectivity().onConnectivityChanged.listen(showConnectivitySnackBar);
+  // }
 
   @override
   void dispose() {
@@ -110,7 +111,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[50],
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -125,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                     IconButton(
                       icon: Icon(
                         Icons.menu,
-                        color: Colors.blue[900],
+                        color: Colors.black,
                       ),
                       onPressed: () {},
                     ),
@@ -135,7 +136,8 @@ class _HomePageState extends State<HomePage> {
                     Text(
                       'Model App',
                       style: TextStyle(
-                        color: Colors.blue[800],
+                        color: Colors.black,
+                        // color: Colors.blue[800],
                         fontSize: 25,
                         fontWeight: FontWeight.w700,
                       ),
@@ -174,7 +176,8 @@ class _HomePageState extends State<HomePage> {
                         Text(
                           'Category',
                           style: TextStyle(
-                            color: Colors.blue[900],
+                            // color: Colors.blue[900],
+                            color: Colors.grey[700],
                             fontSize: 20,
                           ),
                           textAlign: TextAlign.left,
@@ -199,16 +202,31 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Column(
                                     children: [
-                                      CircleAvatar(
-                                        radius: 28,
-                                        backgroundColor: Colors.blue[50],
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Center(
-                                            child: Icon(
-                                              FontAwesomeIcons.newspaper,
-                                              color: Colors.blue[900],
-                                              size: 35,
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            gradient: LinearGradient(
+                                              begin: Alignment.topRight,
+                                              end: Alignment.bottomLeft,
+                                              colors: [
+                                                // Colors.pink[50],
+                                                Colors.pink[100],
+                                                Colors.pinkAccent,
+                                              ],
+                                            )),
+                                        child: CircleAvatar(
+                                          radius: 28,
+                                          backgroundColor: Colors.transparent,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(12.0),
+                                            child: Center(
+                                              child: Image.asset(
+                                                'assets/news1.png',
+                                                // cacheHeight: 100,
+                                                // cacheWidth: 100,
+                                                // height: 100,
+                                                // width: 100,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -218,8 +236,7 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                       Text(
                                         "News",
-                                        style:
-                                            TextStyle(color: Colors.blue[900]),
+                                        style: TextStyle(color: Colors.black),
                                       ),
                                     ],
                                   ),
@@ -241,15 +258,30 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Column(
                                     children: [
-                                      CircleAvatar(
-                                        radius: 28,
-                                        backgroundColor: Colors.red[50],
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Icon(
-                                            FontAwesomeIcons.shopify,
-                                            color: Colors.blue[900],
-                                            size: 35,
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            gradient: LinearGradient(
+                                              begin: Alignment.topRight,
+                                              end: Alignment.bottomLeft,
+                                              colors: [
+                                                // Colors.pink[50],
+                                                Colors.blue[200],
+                                                Colors.blue,
+                                              ],
+                                            )),
+                                        child: CircleAvatar(
+                                          radius: 28,
+                                          backgroundColor: Colors.transparent,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Icon(
+                                              FontAwesomeIcons.shopify,
+                                              color: Colors.white,
+                                              // color: Colors.pink[400],
+
+                                              size: 35,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -258,8 +290,7 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                       Text(
                                         "Shop",
-                                        style:
-                                            TextStyle(color: Colors.blue[900]),
+                                        style: TextStyle(color: Colors.black),
                                       ),
                                     ],
                                   ),
@@ -280,15 +311,30 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Column(
                                     children: [
-                                      CircleAvatar(
-                                        radius: 28,
-                                        backgroundColor: Colors.green[50],
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Icon(
-                                            Icons.person,
-                                            color: Colors.blue[900],
-                                            size: 40,
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            gradient: LinearGradient(
+                                              begin: Alignment.topRight,
+                                              end: Alignment.bottomLeft,
+                                              colors: [
+                                                // Colors.pink[50],
+                                                Colors.lightGreen[500],
+                                                Colors.lightGreen,
+                                              ],
+                                            )),
+                                        child: CircleAvatar(
+                                          radius: 28,
+                                          backgroundColor: Colors.transparent,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Icon(
+                                              Icons.person,
+                                              color: Colors.white,
+
+                                              // color: Colors.blue[900],
+                                              size: 40,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -298,7 +344,7 @@ class _HomePageState extends State<HomePage> {
                                       Text(
                                         "Profile",
                                         style:
-                                            TextStyle(color: Colors.blue[900]),
+                                            TextStyle(color: Colors.grey[900]),
                                       ),
                                     ],
                                   ),
@@ -311,15 +357,28 @@ class _HomePageState extends State<HomePage> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
                                   children: [
-                                    CircleAvatar(
-                                      radius: 28,
-                                      backgroundColor: Colors.pink[50],
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Icon(
-                                          Icons.settings,
-                                          color: Colors.blue[900],
-                                          size: 40,
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          gradient: LinearGradient(
+                                            begin: Alignment.topRight,
+                                            end: Alignment.bottomLeft,
+                                            colors: [
+                                              // Colors.pink[50],
+                                              Colors.yellow[500],
+                                              Colors.yellow,
+                                            ],
+                                          )),
+                                      child: CircleAvatar(
+                                        radius: 28,
+                                        backgroundColor: Colors.transparent,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Icon(
+                                            Icons.settings,
+                                            color: Colors.white,
+                                            size: 35,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -328,7 +387,7 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     Text(
                                       "Settings",
-                                      style: TextStyle(color: Colors.blue[900]),
+                                      style: TextStyle(color: Colors.black),
                                     ),
                                   ],
                                 ),
@@ -336,6 +395,95 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => OffersScreen()),
+                                );
+                              },
+                              child: Card(
+                                elevation: 5,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 28,
+                                        backgroundColor: Colors.yellow[50],
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(0),
+                                          child: Center(
+                                              child: Image.network(
+                                                  'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11070267.jpg')
+                                              //  Icon(
+                                              //   Icons.local_offer,
+                                              //   color: Colors.blue[900],
+                                              //   size: 35,
+                                              // ),
+                                              ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text(
+                                        "Offers",
+                                        style: TextStyle(color: Colors.black),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => EventScreen()),
+                                );
+                              },
+                              child: Card(
+                                elevation: 5,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 28,
+                                        backgroundColor: Colors.brown[50],
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(0),
+                                          child: Center(
+                                            child: Image.network(
+                                                'https://tickera-wpsalad.netdna-ssl.com/wp-content/themes/tickera/style/img/freebies/icons/events/6.png'),
+                                            //  Icon(
+                                            //   Icons.emoji_events_rounded,
+                                            //   color: Colors.blue[900],
+                                            //   size: 35,
+                                            // ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text(
+                                        "Events",
+                                        style: TextStyle(color: Colors.black),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),
@@ -362,13 +510,13 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void showConnectivitySnackBar(ConnectivityResult result) {
-    final hasInternet = result != ConnectivityResult.none;
-    final message = hasInternet
-        ? 'You have again ${result.toString()}'
-        : 'You have no internet';
-    final color = hasInternet ? Colors.green : Colors.red;
+//   void showConnectivitySnackBar(ConnectivityResult result) {
+//     final hasInternet = result != ConnectivityResult.none;
+//     final message = hasInternet
+//         ? 'You have again ${result.toString()}'
+//         : 'You have no internet';
+//     final color = hasInternet ? Colors.green : Colors.red;
 
-    Utils.showTopSnackBar(context, message, color);
-  }
+//     Utils.showTopSnackBar(context, message, color);
+//   }
 }

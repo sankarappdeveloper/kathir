@@ -11,7 +11,7 @@ class OrderItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 3,
-      color: Colors.blue[50],
+      // color: Colors.blue[50],
       margin: EdgeInsets.all(10),
       child: Column(
         children: [
@@ -24,8 +24,12 @@ class OrderItem extends StatelessWidget {
               DateFormat("yMMMd").format(order.dateTime),
             ),
             trailing: CircleAvatar(
+              backgroundColor: Colors.pinkAccent,
               child: IconButton(
-                icon: Icon(Icons.expand_more),
+                icon: Icon(
+                  Icons.expand_more,
+                  color: Colors.white,
+                ),
                 onPressed: () {},
               ),
             ),

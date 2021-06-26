@@ -54,7 +54,7 @@ class CustomIndicatorState extends State<CustomIndicator> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: currentPos == index
-                    ? Color.fromRGBO(0, 0, 0, 0.9)
+                    ? Colors.pinkAccent
                     : Color.fromRGBO(0, 0, 0, 0.4),
               ),
             );

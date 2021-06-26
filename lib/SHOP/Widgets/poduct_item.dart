@@ -33,9 +33,18 @@ class ProductItem extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  child: Image.network(
-                    product.imageUrl,
-                    fit: BoxFit.cover,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(
+                        ProductDetails.routeName,
+                        arguments: product.id,
+                        // MaterialPageRoute(builder: (ctx) => ProductDetails(title)),
+                      );
+                    },
+                    child: Image.network(
+                      product.imageUrl,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 Positioned(
@@ -73,8 +82,11 @@ class ProductItem extends StatelessWidget {
             Text(
               product.title,
               maxLines: 2,
-              style:
-                  TextStyle(fontFamily: 'avenir', fontWeight: FontWeight.w800),
+              style: TextStyle(
+                fontFamily: 'avenir',
+                fontWeight: FontWeight.w800,
+                color: Colors.pinkAccent,
+              ),
               overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 8),

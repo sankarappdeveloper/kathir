@@ -30,7 +30,10 @@ InputDecoration buildInputDecorationsuf(
   String hinttext,
 ) {
   return InputDecoration(
-    suffixIcon: Icon(icons),
+    suffixIcon: Icon(
+      icons,
+      color: Colors.pink[200],
+    ),
     hintText: hinttext,
     // prefixIcon: Icon(icons),
     focusedBorder: OutlineInputBorder(
@@ -40,14 +43,16 @@ InputDecoration buildInputDecorationsuf(
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(25.0),
       borderSide: BorderSide(
-        color: Colors.blue,
+        // color: Colors.blue,
+        color: Colors.pinkAccent,
         width: 1.5,
       ),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(25.0),
       borderSide: BorderSide(
-        color: Colors.blue,
+        // color: Colors.blue,
+        color: Colors.black,
         width: 1.5,
       ),
     ),

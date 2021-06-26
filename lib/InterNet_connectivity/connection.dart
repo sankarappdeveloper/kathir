@@ -1,29 +1,29 @@
-import 'dart:async';
-import 'package:connectivity/connectivity.dart';
-import 'package:flutter/cupertino.dart';
+// import 'dart:async';
+// // import 'package:connectivity/connectivity.dart';
+// import 'package:flutter/cupertino.dart';
 
-class Connection extends ChangeNotifier {
-  bool neTisOn = true;
+// class Connection extends ChangeNotifier {
+//   bool neTisOn = true;
 
-  StreamController<ConnectivityResult> netWorkStatus =
-      StreamController<ConnectivityResult>();
+//   // StreamController<ConnectivityResult> netWorkStatus =
+//   //     StreamController<ConnectivityResult>();
 
-  Connection() {
-    Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
-      netWorkStatus.add(result);
+//   Connection() {
+//     Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
+//       netWorkStatus.add(result);
 
-      setNetWork(result);
-    });
+//       setNetWork(result);
+//     });
 
-    notifyListeners();
-  }
+//     notifyListeners();
+//   }
 
-  setNetWork(ConnectivityResult value) {
-    if (value == ConnectivityResult.none) {
-      neTisOn = false;
-    } else {
-      neTisOn = true;
-    }
-    notifyListeners();
-  }
-}
+//   setNetWork(ConnectivityResult value) {
+//     if (value == ConnectivityResult.none) {
+//       neTisOn = false;
+//     } else {
+//       neTisOn = true;
+//     }
+//     notifyListeners();
+//   }
+// }

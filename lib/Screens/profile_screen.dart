@@ -1,9 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:project_1/Widgets/input_decoration.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key key}) : super(key: key);
 
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+//     AnimationController controllerOne;
+
+//   Animation<Color> animationOne;
+
+//   Animation<Color> animationTwo;
+  @override
+//   void initState() {
+//     // TODO: implement initState
+//     super.initState();
+//     controllerOne = AnimationController(
+//         duration: Duration(milliseconds: 2000),
+//         vsync: this);
+//     animationOne = ColorTween(begin: Colors.grey,end: Colors.white70).animate(controllerOne);
+//     animationTwo = ColorTween(begin: Colors.white70,end: Colors.grey).animate(controllerOne);
+//     controllerOne.forward();
+//     controllerOne.addListener((){
+//       if(controllerOne.status == AnimationStatus.completed){
+//         controllerOne.reverse();
+//       } else if(controllerOne.status == AnimationStatus.dismissed){
+//         controllerOne.forward();
+//       }
+//       this.setState((){});
+//     });
+//   }
+
+//   @override
+//   void dispose() {
+//     // TODO: implement dispose
+//     super.dispose();
+//     controllerOne.dispose();
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +74,8 @@ class ProfileScreen extends StatelessWidget {
                 "A R Kathiresh",
                 style: TextStyle(
                     fontSize: 25.0,
-                    color: Colors.blueGrey,
+                    // color: Colors.blueGrey,
+                    color: Colors.black,
                     letterSpacing: 2.0,
                     fontWeight: FontWeight.w400),
               ),
@@ -157,12 +194,14 @@ class ProfileScreen extends StatelessWidget {
                           elevation: 6,
                           padding: EdgeInsets.symmetric(
                               horizontal: 50, vertical: 10),
-                          backgroundColor: Colors.blue.shade300,
+                          backgroundColor: Colors.pinkAccent,
+                          //  Colors.blue.shade300,
+
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20))),
                       child: Text(
                         'Submit',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: TextStyle(fontSize: 16, color: Colors.white),
                       ),
                       onPressed: () {},
                     ),

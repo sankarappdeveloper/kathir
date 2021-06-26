@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:io';
-import 'package:connectivity/connectivity.dart';
+// import 'package:connectivity/connectivity.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
@@ -138,6 +138,7 @@ import 'package:provider/provider.dart';
 //     });
 //   }
 // }
+// ================================================================================
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
@@ -152,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    connectionStatus = Provider.of<ConnectivityResult>(context);
+    // connectionStatus = Provider.of<ConnectivityResult>(context);
     return Scaffold(
         key: _scafoldkey,
         appBar: AppBar(
@@ -162,33 +163,33 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                "You are ${(connectionStatus != ConnectivityResult.none ? 'Online' : 'Offline')}",
-                style: Theme.of(context).textTheme.display1,
-              ),
+              // Text(
+              //   "You are ${(connectionStatus != ConnectivityResult.none ? 'Online' : 'Offline')}",
+              //   style: Theme.of(context).textTheme.display1,
+              // ),
               SizedBox(
                 height: 20.0,
               ),
               RaisedButton(
                 onPressed: () {
-                  if (connectionStatus == ConnectivityResult.wifi ||
-                      connectionStatus == ConnectivityResult.mobile) {
-                    _scafoldkey.currentState.hideCurrentSnackBar();
-                    _scafoldkey.currentState.showSnackBar(SnackBar(
-                        content: Text(
-                      ""
-                      "You are online!",
-                      style: TextStyle(color: Colors.red, fontSize: 18.0),
-                    )));
-                  } else {
-                    _scafoldkey.currentState.hideCurrentSnackBar();
-                    _scafoldkey.currentState.showSnackBar(SnackBar(
-                        content: Text(
-                      ""
-                      "You are offline!",
-                      style: TextStyle(color: Colors.red, fontSize: 18.0),
-                    )));
-                  }
+                  // if (connectionStatus == ConnectivityResult.wifi ||
+                  //     connectionStatus == ConnectivityResult.mobile) {
+                  //   _scafoldkey.currentState.hideCurrentSnackBar();
+                  //   _scafoldkey.currentState.showSnackBar(SnackBar(
+                  //       content: Text(
+                  //     ""
+                  //     "You are online!",
+                  //     style: TextStyle(color: Colors.red, fontSize: 18.0),
+                  //   )));
+                  // } else {
+                  //   _scafoldkey.currentState.hideCurrentSnackBar();
+                  //   _scafoldkey.currentState.showSnackBar(SnackBar(
+                  //       content: Text(
+                  //     ""
+                  //     "You are offline!",
+                  //     style: TextStyle(color: Colors.red, fontSize: 18.0),
+                  //   )));
+                  // }
                 },
                 child: Text('Check Status'),
               )

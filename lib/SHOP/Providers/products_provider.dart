@@ -6,7 +6,8 @@ class Products with ChangeNotifier {
     Product(
       id: 'p1',
       title: 'T-Shirt',
-      description: 'A red shirt - it is pretty red!',
+      description:
+          "A T-shirt, or tee shirt, is a style of fabric shirt named after the T shape of its body and sleeves. Traditionally, it has short sleeves and a round neckline, known as a crew neck, which lacks a collar. T-shirts are generally made of a stretchy, light and inexpensive fabric and are easy to clean.",
       price: 79.99,
       imageUrl:
           'https://th.bing.com/th?id=OPA.mOlqi%2fh77KCPrA474C474&w=165&h=220&rs=1&o=5&pid=21.1',

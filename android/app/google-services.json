@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "708485050179",
+    "project_id": "kathirproject1",
+    "storage_bucket": "kathirproject1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708485050179:android:7b23477be10665e54a49f6",
+        "android_client_info": {
+          "package_name": "com.example.project_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708485050179-ev06nuu7ldvr8nabkmlvhp2sqlfqpb66.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbCeEVhMcAryNqfki7_Ib_j03bt4BTb6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708485050179-ev06nuu7ldvr8nabkmlvhp2sqlfqpb66.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

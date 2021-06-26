@@ -9,7 +9,7 @@ class NewsCatagory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.blue[50],
+      color: Colors.white,
       elevation: 2,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -45,7 +45,8 @@ class NewsCatagory extends StatelessWidget {
                       child: Text(
                         title,
                         style: TextStyle(
-                            color: Colors.blue[800],
+                            // color: Colors.blue[800],
+                            color: Colors.black,
                             fontWeight: FontWeight.w800),
                       )),
                   Row(
@@ -54,7 +55,7 @@ class NewsCatagory extends StatelessWidget {
                       Icon(
                         Icons.calendar_today_outlined,
                         size: 20,
-                        color: Colors.grey,
+                        color: Colors.pink[200],
                       ),
                       SizedBox(
                         width: 10,
@@ -73,7 +74,8 @@ class NewsCatagory extends StatelessWidget {
                       Icon(
                         Icons.timer,
                         size: 20,
-                        color: Colors.grey,
+                        // color: Colors.grey,
+                        color: Colors.pink[200],
                       ),
                       Text(
                         "10 min read",

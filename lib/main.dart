@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:project_1/shop_mainScreen.dart';
 // import 'package:project_1/Widgets/maps.dart';
 import 'InterNet_connectivity/connection.dart';
-
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:project_1/InterNet_connectivity/net_home.dart';
 import 'package:project_1/Maps/medium_map.dart';
 import 'Maps/googlmap_screen.dart';
+import 'Practice/firebase_verification.dart';
+import 'Practice/listViewFirebase.dart';
 import 'SHOP/Providers/cart.dart';
 import 'SHOP/Providers/order.dart';
 import 'SHOP/Providers/products_provider.dart';
@@ -16,15 +18,22 @@ import 'SHOP/Screens/Cart_Screen.dart';
 import 'SHOP/Screens/order_screen.dart';
 import 'SHOP/Screens/product_detail_screen.dart';
 import 'SHOP/Screens/screens.dart';
+import 'Screens/Login_Screen.dart';
 import 'Screens/home_screen.dart';
 // import 'Widgets/map_update.dart';
 import 'package:overlay_support/overlay_support.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+// import 'dart:html';
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => Connection()),
+        // ChangeNotifierProvider(create: (_) => Connection()),
         ChangeNotifierProvider(
           create: (ctx) => Products(),
           // value: Products(),
@@ -59,8 +68,25 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+            primarySwatch: Colors.blue,
+            appBarTheme: AppBarTheme(
+                // actionsIconTheme: ,
+                color: Colors.white,
+                elevation: 0,
+                textTheme: ThemeData.dark().textTheme.copyWith(
+                        headline6: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black,
+                    )))
+            //         textTheme: TextTheme(
+            //   bodyText1: TextStyle(),
+            //   bodyText2: TextStyle(),
+            // ).apply(
+            //   bodyColor: Colors.orange,
+            //   displayColor: Colors.blue,
+            // ),
+            ),
         home: HomeScreen(),
 
         routes: {

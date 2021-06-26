@@ -13,8 +13,18 @@ class CartScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[800],
+        elevation: 0,
+        // backgroundColor: Colors.pinkAccent,
         title: Text('Your Cart'),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Column(
         children: [
@@ -22,7 +32,7 @@ class CartScreen extends StatelessWidget {
             width: double.infinity,
             // height: 200,
             decoration: BoxDecoration(
-              color: Colors.blue[700],
+              color: Colors.white,
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(40),
                   bottomRight: Radius.circular(40)),
@@ -34,6 +44,7 @@ class CartScreen extends StatelessWidget {
                 alignment: Alignment(0.0, 200.5),
                 width: 300,
                 child: Card(
+                  elevation: 5,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40),
@@ -88,7 +99,7 @@ class CartScreen extends StatelessWidget {
                               elevation: 6,
                               padding: EdgeInsets.symmetric(
                                   horizontal: 50, vertical: 10),
-                              backgroundColor: Colors.lightGreen[500],
+                              backgroundColor: Colors.pinkAccent,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -103,7 +114,7 @@ class CartScreen extends StatelessWidget {
                             },
                             child: Text(
                               'Order Now',
-                              style: TextStyle(color: Colors.black),
+                              style: TextStyle(color: Colors.white),
                             )),
                       ],
                     ),

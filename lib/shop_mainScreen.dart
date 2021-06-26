@@ -22,7 +22,7 @@ class _ShopMainScreenState extends State<ShopMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[50],
+      backgroundColor: Colors.white,
       // drawer: AppCall(child: AppDrawer()),
       body: SafeArea(
         child: Column(
@@ -30,7 +30,9 @@ class _ShopMainScreenState extends State<ShopMainScreen> {
             Container(
               height: 150,
               decoration: BoxDecoration(
-                color: Colors.blue[700],
+                // color: Colors.blue[700],
+                color: Colors.pinkAccent,
+
                 borderRadius: BorderRadius.only(
                     // bottomLeft: Radius.circular(40),
                     bottomRight: Radius.circular(40)),
